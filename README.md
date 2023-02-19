@@ -19,6 +19,8 @@ This project was under development during the month of December in 2021 when I w
 2. Outdated and inefficient code base. I do intend to redevelop this project using updated versions of Next.js with TypeScript in the future.
 3. Shift in priority. As I no longer do freelance work,my priorities have shifted to focus on more pertinent projects.
 
+This website is technically live and is accessible at [page.tjay.io](https://page.tjay.io) however, there is an unexplained internal error when navigating off the home page. This issue will not be fixed as this project will eventually undergo a full overhaul in the future.
+
 ## Description
 
 ### Design Choices and Methodology
