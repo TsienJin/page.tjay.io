@@ -143,7 +143,7 @@ function InvoiceFields({ slugRoute, query }){
                 <Field label={labels.invoice.invoiceNumber} defaultText={defaultText(labels.invoice.invoiceNumber)} slugRoute={slugRoute} type={"number"}/>
             </Container>
             <Container name={"products"}>
-                <Product label={labels.invoice.product} slugRoute={slugRoute} />
+                <Product label={labels.invoice.product} defaultText={defaultText(labels.invoice.product)} slugRoute={slugRoute} />
             </Container>
             <Container name={"Other Information"}>
                 <TextArea label={labels.invoice.comments} defaultText={defaultText(labels.invoice.comments)} slugRoute={slugRoute} />

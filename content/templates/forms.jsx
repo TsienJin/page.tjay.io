@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 
 // Import statment
-import { ProductItem } from "./formsProduct";
+import ProductContainer, { ProductItem } from "./formsProduct";
 
 // Export statement
 export { Container, Field, TextArea, Product }
@@ -153,12 +153,12 @@ function TextArea({ label, defaultText, slugRoute }){
 }
 
 // Product
-function Product({ label, defaultVals=[], slugRoute }){
+function Product({ label, defaultText, slugRoute }){
 
   
   return(
     <>
-      <ProductItem />
+      <ProductContainer defaultString={defaultText}/>
     </>
   )
 

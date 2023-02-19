@@ -4,12 +4,14 @@ import { route } from "next/dist/server/router"
 
 export {ProductItem}
 
-export default class ProductContainer {
+export default class ProductContainer extends Component {
     items=[]
     query=''
+    strTest
     
     constructor({defaultString=''}){
-
+        super()
+        this.strTest = defaultString
     }
 
 
@@ -30,14 +32,45 @@ export default class ProductContainer {
     /////////
     // Private JSX Methods
     /////////
-    
+    AddProduct(){
 
+        const eventHandler = () => {
+            console.log("Add product button clicked!")
+        }
 
+        return(
+            <button className="w-full flex flex-row items-center justify-center gap-x-2 p-3 rounded shadow mt-4 transition-all
+                                bg-gray-100 text-gray-700
+                                hover:bg-blue-600 hover:text-white hover:shadow-md hover:rounded-sm
+                                " onClick={event=>{eventHandler()}}>
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z" />
+                    </svg>
+                </span>
+                <span>Add Product</span>
+            </button>
+        )
+    }
 
 
     /////////
     // Public Methods
     /////////
+
+
+
+    /////////
+    // Render Methods
+    /////////
+    render(){
+        return(
+            <>
+                <ProductItem />
+                <this.AddProduct />
+            </>
+        )
+    }
     
 }
 
@@ -108,7 +141,9 @@ class ProductItem extends Component {
           )
     }
 
-    ProductDeleteButton({obj}){
+    ProductDeleteButton({obj, delMethod=()=>{console.log('Delete method not passed!')}}){
+
+        
         return(
             <div className="DeleteButton flex justify-center items-center p-3 rounded transition bg-gray-100 text-gray-600 shadow
                           hover:bg-red-500 hover:text-white hover:shadow-red-300 hover:cursor-pointer hover:scale-110 hover:rounded-sm"
